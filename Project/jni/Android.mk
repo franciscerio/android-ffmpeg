@@ -16,7 +16,7 @@ FFMPEG_LIBS := $(addprefix ffmpeg/, \
 
 LOCAL_CFLAGS += -g -Iffmpeg -Ivideokit -Wno-deprecated-declarations 
 LOCAL_LDLIBS += -llog -lz -landroid $(FFMPEG_LIBS) x264/libx264.a 
-LOCAL_SRC_FILES := videokit/com_b2bpo_media_VideoBrowser.c videokit/ffmpeg.c videokit/cmdutils.c
+LOCAL_SRC_FILES := videokit/com_b2bpo_media_VideoBrowser.c ffmpeg/ffmpeg.c ffmpeg/cmdutils.c
 
 include $(BUILD_SHARED_LIBRARY)
 
