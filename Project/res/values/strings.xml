@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RecordActivity</string>
+    <string name="hello">Hello ffmpeg</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="jpg">Picture</string>
+     <string name="statusRec">press Record to add voice to picture</string>
+     <string name="statusStart">Started recording</string>
+     <string name="statusStop">recording complete</string>
+     <string name="status">Status</string>
+     <string name="mpeg">Mpeg</string>
+    
+</resources>

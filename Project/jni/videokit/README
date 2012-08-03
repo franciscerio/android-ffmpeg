@@ -1,0 +1,7 @@
+Android.mk uses copies of 2 files in this directory to link ffmpeg executable.
+Files here are copy from ./Project/ffmpeg
+Note that in 'halfninja' project, the versions here used different logger for some reason.
+av_log method in libavutil now seems OK.
+
+If ffmpeg dir changes then these will be out of date and you will have to recopy
+from ./ffmpeg after you init that git submodule. 
