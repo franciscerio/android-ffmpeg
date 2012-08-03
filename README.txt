@@ -23,8 +23,8 @@ buttons in the main Android activity w/ binding to  following features:
 setup
 -----
 same NDK
-edit  ./Proj/jni/settings.sh to conform with your NDK setup, NDK_Base etc. 
-edit ./Proj/local.properties  setting home dirs for SDK, NDK
+edit  ./Project/jni/settings.sh to conform with your NDK setup, NDK_Base etc. 
+edit ./Project/local.properties  setting home dirs for SDK, NDK
 edit ./Project/project.properties setting the android api  you will use 
 ./Project dir android update using below :  exec cmd from project root dir
       $ android update project --target 1 --name RecorderActivity --path Project
