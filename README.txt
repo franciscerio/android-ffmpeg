@@ -1,4 +1,10 @@
 ===new in this fork
+- android jni in videokit 
+- android app as controller for ffmpeg
+- media selection by android app for media files that get muxed
+
+sample logcat at : http://pastebin.com/SHtc2ppU
+
 I liked the newer log implementation , esp in ./ffmpeg/cmdutils.c in the 
 'guardian' project. But , i also needed the java layer, jni integration, and 
 the 'videokit' directory and library  from 'halfninja' version of 'android-ffmpeg'.
@@ -7,7 +13,10 @@ Halfninja solved some wierd fprintf vs av_log issue that is no longer
 relevant in the current ffmpeg release. Native logger is fine and , 
 you can see it in android logcat by redirecting (stdout, stderr)
 to logcat.  That means that jni android stuff can link directly against 
-the current version of ffmpeg.c and the current version of cmdutils.c. 
+the current version of ffmpeg.c and the current version of cmdutils.c.
+Note this linking strategy screws up the app's android lifecycle because
+jni interface cant handle the 'exit-program()' at the end of the main function
+in ./jni/ffmpeg/ffmpeg.c. 
 
 So, i merged  the most useful , jni related stuff from halfninja/ 
 into guardian and then added code of mine :
@@ -29,6 +38,7 @@ edit ./Project/project.properties setting the android api  you will use
 ./Project dir android update using below :  exec cmd from project root dir
       $ android update project --target 1 --name RecorderActivity --path Project
  edit & reset the AndroidManifest.xml file to what u are using
+edit / review cpu setting in ./Project/jni/configure_ffmpeg.sh
 
 building 
 -------

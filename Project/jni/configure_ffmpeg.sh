@@ -27,7 +27,7 @@ pushd ffmpeg
 $DEBUG_FLAG \
 --enable-cross-compile \
 --arch=arm \
---cpu=cortex-a8 \
+--cpu=cortex-a9 \
 --target-os=linux \
 --enable-runtime-cpudetect \
 --prefix=/output \
