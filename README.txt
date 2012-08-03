@@ -26,13 +26,14 @@ same NDK
 edit  ./Proj/jni/settings.sh to conform with your NDK setup, NDK_Base etc. 
 edit ./Proj/local.properties  setting home dirs for SDK, NDK
 edit ./Project/project.properties setting the android api  you will use 
-./Project dir may  need to be updt with the android 'update' project command??
+./Project dir android update using below :  exec cmd from project root dir
+      $ android update project --target 1 --name RecorderActivity --path Project
  edit & reset the AndroidManifest.xml file to what u are using
 
 building 
 -------
-same 2 steps for the submodules ( i moved them ,but they need to be fetched 
-   to ./ffmpeg dir and to ./x264 dir under ./Project/jni
+same 2 steps for the submodules ( i moved them ,but they need  'init' and 'update' 
+    submodules install to ./ffmpeg dir and to ./x264 dir under ./Project/jni
 cd Project/jni
 ./configure_make_everything.sh
 $NDK/ndk-build
