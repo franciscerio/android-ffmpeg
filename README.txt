@@ -9,14 +9,15 @@ I liked the newer log implementation , esp in ./ffmpeg/cmdutils.c in the
 'guardian' project. But , i also needed the java layer, jni integration, and 
 the 'videokit' directory and library  from 'halfninja' version of 'android-ffmpeg'.
 
-Halfninja solved some wierd fprintf vs av_log issue that is no longer 
+Halfninja, in ./Project/jni/videokit/cmdutils.c ffmpeg.c solved some issues
+with sysexit and with wierd fprintf vs av_log issue that is no longer 
 relevant in the current ffmpeg release. Native logger is fine and , 
 you can see it in android logcat by redirecting (stdout, stderr)
 to logcat.  That means that jni android stuff can link directly against 
 the current version of ffmpeg.c and the current version of cmdutils.c.
 Note this linking strategy screws up the app's android lifecycle because
 jni interface cant handle the 'exit-program()' at the end of the main function
-in ./jni/ffmpeg/ffmpeg.c. 
+in ./jni/ffmpeg/ffmpeg.c.  See Halfninja on git for solution to the sysexit issue.
 
 So, i merged  the most useful , jni related stuff from halfninja/ 
 into guardian and then added code of mine :
